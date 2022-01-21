@@ -1,15 +1,17 @@
-#ifdef __LIBBPF_SYS_NOVENDOR
+#if 0
 #include <linux/if_link.h>
 #include <bpf/bpf.h>
 #include <bpf/btf.h>
 #include <bpf/libbpf.h>
 #include <bpf/xsk.h>
+#include <linux/perf_event.h>
 #else
 #include "libbpf/include/uapi/linux/if_link.h"
 #include "libbpf/src/bpf.h"
 #include "libbpf/src/btf.h"
 #include "libbpf/src/libbpf.h"
 #include "libbpf/src/xsk.h"
+#include <linux/perf_event.h>
 #endif /* __LIBBPF_SYS_NOVENDOR */
 
 extern __u64 *_xsk_ring_prod__fill_addr(struct xsk_ring_prod *fill, __u32 idx);
